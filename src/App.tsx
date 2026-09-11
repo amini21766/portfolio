@@ -75,6 +75,7 @@ export default function App() {
   const [recruiterMode, setRecruiterMode] = useState<boolean>(false);
   const [showCustomizer, setShowCustomizer] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('overview');
+  const [contactSubject, setContactSubject] = useState('');
 
   // Track active section on scroll
   useEffect(() => {
@@ -153,6 +154,7 @@ export default function App() {
   };
 
   const contactFromService = (subject?: string) => {
+    setContactSubject(subject ?? '');
     setActiveService(null);
     window.history.pushState({}, '', '/');
     window.setTimeout(() => scrollTo('contact'), 0);
@@ -211,7 +213,7 @@ export default function App() {
 
           <Services
             services={initialServices}
-            onContact={() => scrollTo('contact')}
+            onContact={contactFromService}
             onOpenService={openServicePage}
           />
 
@@ -225,7 +227,7 @@ export default function App() {
 
           <Testimonials testimonials={initialTestimonials} />
 
-          <Contact profile={profile} />
+          <Contact profile={profile} initialSubject={contactSubject} />
         </main>
       )}
 

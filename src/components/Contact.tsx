@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { DeveloperProfile } from '../types';
 import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
 
-  interface ContactProps {
+interface ContactProps {
   profile: DeveloperProfile;
+  initialSubject?: string;
 }
 
 interface Web3FormsResponse {
@@ -12,9 +13,14 @@ interface Web3FormsResponse {
   message?: string;
 }
 
-export const Contact: React.FC<ContactProps> = ({ profile }) => {
+export const Contact: React.FC<ContactProps> = ({ profile, initialSubject = '' }) => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    if (!initialSubject) return;
+    setFormData((current) => ({ ...current, subject: initialSubject }));
+  }, [initialSubject]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
