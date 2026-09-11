@@ -2,12 +2,11 @@ import React, { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Certificate } from '../types';
 import { Calendar, ChevronLeft, ChevronRight, ExternalLink, ShieldCheck } from 'lucide-react';
+import certificateImage from '../assets/images/certificate.png';
 
 interface CertificatesProps {
   certificates: Certificate[];
 }
-
-const certificateImage = '/src/assets/images/certificate.png';
 
 export const Certificates: React.FC<CertificatesProps> = ({ certificates }) => {
   const [desktopPage, setDesktopPage] = useState(0);

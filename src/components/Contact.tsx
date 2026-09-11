@@ -24,7 +24,8 @@ export const Contact: React.FC<ContactProps> = ({ profile, initialSubject = '' }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim()
+      || '384cc57c-24f9-49c3-93e4-f94ff6da591b';
 
     if (!accessKey) {
       toast.error('The contact form is not configured yet. Please use the email link below.');

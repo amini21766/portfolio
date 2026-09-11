@@ -9,6 +9,10 @@ import {
   Testimonial,
   ServiceOffer,
 } from '../types';
+import developerAvatar from '../assets/images/developer_avatar_1785584249016.jpg';
+import mernDashboardImage from '../assets/images/mern_saas_dashboard_1785584263462.jpg';
+import realtimeChatImage from '../assets/images/realtime_chat_app_1785584275764.jpg';
+import ecommerceImage from '../assets/images/ecommerce_microservice_1785584289233.jpg';
 
 export const initialProfile: DeveloperProfile = {
   name: 'Hamid Ahmad Amini',
@@ -26,7 +30,7 @@ export const initialProfile: DeveloperProfile = {
   twitter: 'https://x.com/hamidamini_dev',
   devTo: 'https://dev.to/hamidamini',
   whatsapp: 'https://wa.me/93707187916',
-  avatarUrl: '/src/assets/images/developer_avatar_1785584249016.jpg',
+  avatarUrl: developerAvatar,
   resumeSummary: 'Client-focused Full-Stack Developer with 5+ years of experience delivering custom web portals, database systems, and responsive user interfaces for organizations like ActionAid and government ministries. Expert in MERN, Django, Laravel, and MySQL.',
   topSkills: ['React', 'Tailwind CSS', 'Node.js', 'Express.js', 'Python Django', 'PHP Laravel', 'MySQL', 'MongoDB'],
 };
@@ -38,7 +42,7 @@ export const initialProjects: Project[] = [
     category: 'mern',
     shortDescription: 'A full-stack education portal for managing classes, schedules, and announcements.',
     fullDescription: 'A responsive MERN stack education portal that gives administrators and students one place to manage classes, coordinate schedules, and publish important announcements.',
-    image: '/src/assets/images/mern_saas_dashboard_1785584263462.jpg',
+    image: mernDashboardImage,
     metrics: 'Centralized class, schedule, and announcement management',
     stars: 240,
     techStack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
@@ -87,7 +91,7 @@ app.get('/api/v1/land-records/:id', authenticateUser, async (req, res) => {
     category: 'frontend',
     shortDescription: 'Interactive web platform built during work with ActionAid to track community outreach, resource allocation, and field project metrics.',
     fullDescription: 'Created a responsive, user-friendly portal enabling non-technical field coordinators at ActionAid to submit community needs, track aid distribution, and generate clear progress reports for global sponsors.',
-    image: '/src/assets/images/realtime_chat_app_1785584275764.jpg',
+    image: realtimeChatImage,
     metrics: '🌐 65% Faster Field Reports • Used Across Regional Programs',
     stars: 195,
     techStack: ['React', 'Python Django', 'MySQL', 'Tailwind CSS', 'PWA'],
@@ -137,7 +141,7 @@ app.post('/api/v1/actionaid/reports', async (req, res) => {
     category: 'mern',
     shortDescription: 'An intuitive analytics platform giving non-technical business owners instant visibility into website performance, sales, and user activity.',
     fullDescription: 'Pulse Analytics translates complex raw website data into actionable, visual business insights. Features real-time metric updates, automated weekly emails, and responsive charts.',
-    image: '/src/assets/images/mern_saas_dashboard_1785584263462.jpg',
+    image: mernDashboardImage,
     metrics: '⚡ Sub-Second Load Time • 50k+ Daily Tracked Visits',
     stars: 184,
     techStack: ['React', 'Node.js', 'MongoDB', 'TypeScript', 'Tailwind CSS'],
@@ -186,7 +190,7 @@ app.get('/api/v1/business/stats', async (req, res) => {
     category: 'backend',
     shortDescription: 'A complete e-commerce solution with product catalog search, simple cart management, and 100% secure payment checkout.',
     fullDescription: 'OmniCart provides business owners with a reliable online shop. Includes mobile-friendly product galleries, inventory management, discount coupon creation, and automated credit card payment processing via Stripe.',
-    image: '/src/assets/images/ecommerce_microservice_1785584289233.jpg',
+    image: ecommerceImage,
     metrics: '🛍️ $2.4M Purchases Processed • 100% Secure Checkout',
     stars: 210,
     techStack: ['React', 'Node.js', 'Stripe Payments', 'MongoDB', 'Express'],
