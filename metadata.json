@@ -1,0 +1,8 @@
+{
+  "name": "Hamid Portfilio",
+  "description": "A modern, interactive portfolio application for MERN Full-Stack Software Engineers featuring live API workbench, interactive projects, code snippets, recruiter view, and real-time profile editor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

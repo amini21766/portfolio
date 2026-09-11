@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Tailwind v4 uses the system colour preference for `dark:` by default.
+   Make the variant follow the `.dark` class that the theme toggle manages. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  /* Product palette: blue utilities intentionally resolve to the indigo brand
+     scale so existing components share one accent without visual drift. */
+  --color-blue-50: var(--color-indigo-50);
+  --color-blue-100: var(--color-indigo-100);
+  --color-blue-200: var(--color-indigo-200);
+  --color-blue-300: var(--color-indigo-300);
+  --color-blue-400: var(--color-indigo-400);
+  --color-blue-500: var(--color-indigo-500);
+  --color-blue-600: var(--color-indigo-600);
+  --color-blue-700: var(--color-indigo-700);
+  --color-blue-800: var(--color-indigo-800);
+  --color-blue-900: var(--color-indigo-900);
+  --color-blue-950: var(--color-indigo-950);
+
+  /* Shared shape scale: controls, cards, and feature surfaces. */
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+/* Clear keyboard focus is consistent across every interactive control. */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-indigo-500);
+  outline-offset: 3px;
+}
+
+/* The contact form intentionally uses an underline-only focus treatment. */
+#contact input:focus,
+#contact input:focus-visible,
+#contact textarea:focus,
+#contact textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Section headings share one calm, neutral hierarchy; accent colour remains
+   available for intentional words or UI states rather than entire headings. */
+.portfolio-grid > section:not(#services) h2 {
+  color: var(--color-slate-900);
+  letter-spacing: -0.025em;
+}
+
+.dark .portfolio-grid > section:not(#services) h2 {
+  color: var(--color-white);
+}
+
+/* Shared section-title treatment: a compact accent reinforces hierarchy
+   without competing with the content beneath it. */
+.section-title {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+@media (min-width: 64rem) {
+  .section-title.section-title-left {
+    margin-inline: 0;
+  }
+}
+
+@layer utilities {
+  /* Keep supporting labels readable at normal browser zoom. */
+  .text-2xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .text-2xs.text-slate-400 {
+    color: var(--color-slate-500);
+  }
+
+  .dark .text-2xs.text-slate-400 {
+    color: var(--color-slate-400);
+  }
+
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(99, 102, 241, 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(99, 102, 241, 0.09) 1px, transparent 1px);
+  }
+  
+  .dark .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(226, 232, 240, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.06) 1px, transparent 1px);
+  }
+}
