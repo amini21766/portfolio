@@ -9,7 +9,7 @@ import {
   Testimonial,
   ServiceOffer,
 } from '../types';
-import developerAvatar from '../assets/images/developer_avatar_1785584249016.jpg';
+import developerAvatar from '../assets/images/developer_avatar_1785584249016  .png';
 import mernDashboardImage from '../assets/images/mern_saas_dashboard_1785584263462.jpg';
 import realtimeChatImage from '../assets/images/realtime_chat_app_1785584275764.jpg';
 import ecommerceImage from '../assets/images/ecommerce_microservice_1785584289233.jpg';
