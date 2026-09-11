@@ -107,12 +107,12 @@ export const Footer: React.FC<FooterProps> = ({ profile }) => {
             <ul className="space-y-2.5 text-slate-400 text-sm">
               <li>
                 <a href={`mailto:${profile.email}`} className="hover:text-white transition-colors block break-all">
-                  {profile.email || 'Info@dara.af'}
+                  {profile.email || 'en.amini.dev@gmail.com'}
                 </a>
               </li>
               <li>
                 <a href={`tel:${profile.phone?.replace(/[^0-9+]/g, '')}`} className="hover:text-white transition-colors block">
-                  +93 730 600 914
+                  +93707187916
                 </a>
               </li>
               <li className="text-slate-400">
@@ -138,12 +138,12 @@ export const Footer: React.FC<FooterProps> = ({ profile }) => {
         {/* Bottom Divider & Rights Row */}
         <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Dara Softwarehouse. All Rights Reserved.
+            © {new Date().getFullYear()} Hamid. All Rights Reserved.
           </div>
           <div className="flex items-center gap-1">
             <span>Made by</span>
             <span className="text-rose-500 mx-0.5">❤️</span>
-            <span className="text-slate-300 font-medium">Dara Softwarehouse</span>
+            <span className="text-slate-300 font-medium">Hamid</span>
             <span className="text-2xs px-1 rounded bg-slate-800 text-slate-400 font-mono ml-0.5">AF</span>
           </div>
         </div>
